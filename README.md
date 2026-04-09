@@ -1,20 +1,7 @@
 # 🎓 Virtual Classroom
 
 A fully responsive, web-based virtual classroom platform built with **HTML, CSS, and JavaScript** — no frameworks, no build tools, just open and run!
-
----
-
-## ✨ Features
-
-- 🏠 **Hero section** with animated live session preview card
-- 📚 **Course catalog** with category filtering (All / Programming / Design / Data Science)
-- 🎥 **Virtual classroom** – join/create sessions with mic, camera & chat controls
-- 🔐 **Auth modals** – Login & Sign Up (UI ready)
-- 📱 **Fully responsive** – works on mobile, tablet, and desktop
-- 🌙 **Dark theme** with clean, modern design
-- 🔔 Toast notifications for user feedback
-
----
+```
 
 ## 🗂️ Project Structure
 
@@ -22,10 +9,8 @@ A fully responsive, web-based virtual classroom platform built with **HTML, CSS,
 virtual-classroom/
 │
 ├── index.html          # Main HTML page
-├── css/
-│   └── style.css       # All styles (variables, layout, components)
-├── js/
-│   └── app.js          # Course data, classroom logic, modals, toast
+├── style.css       # All styles (variables, layout, components)
+├── app.js          # Course data, classroom logic, modals, toast
 └── README.md
 ```
 
