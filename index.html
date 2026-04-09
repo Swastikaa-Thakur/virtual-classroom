@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduSpace – Virtual Classroom</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <span>EduSpace</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#classroom">Classroom</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn btn-outline" onclick="openModal('loginModal')">Log In</button>
+      <button class="btn btn-primary" onclick="openModal('signupModal')">Sign Up</button>
+    </div>
+    <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="hero-badge"><i class="fa-solid fa-bolt"></i> Online Learning Platform</span>
+      <h1>Learn Anything,<br><span class="highlight">Anywhere.</span></h1>
+      <p>A seamless virtual classroom experience — join live sessions, watch recorded lectures, complete assignments, and grow your skills from anywhere in the world.</p>
+      <div class="hero-btns">
+        <button class="btn btn-primary btn-lg" onclick="openModal('signupModal')">Get Started Free</button>
+        <button class="btn btn-ghost btn-lg" onclick="scrollToSection('courses')">
+          <i class="fa-solid fa-play"></i> Explore Courses
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>12K+</strong><span>Students</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>200+</strong><span>Courses</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>50+</strong><span>Instructors</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="classroom-card">
+        <div class="cc-header">
+          <div class="cc-dots"><span></span><span></span><span></span></div>
+          <span class="cc-title">Live Session — Python Basics</span>
+          <span class="cc-live"><i class="fa-solid fa-circle"></i> LIVE</span>
+        </div>
+        <div class="cc-video">
+          <i class="fa-solid fa-user-tie"></i>
+          <span>Prof. Sarah</span>
+        </div>
+        <div class="cc-students">
+          <div class="avatar-row">
+            <div class="av av1">A</div>
+            <div class="av av2">B</div>
+            <div class="av av3">C</div>
+            <div class="av av4">+8</div>
+          </div>
+          <span>11 students joined</span>
+        </div>
+        <div class="cc-chat">
+          <div class="chat-msg"><span class="cm-name">Anjali</span> Can you explain loops again?</div>
+          <div class="chat-msg"><span class="cm-name">Rohan</span> Great explanation! 🎉</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES ── -->
+  <section class="features-section">
+    <div class="section-label">Why EduSpace?</div>
+    <h2 class="section-title">Everything You Need to Learn</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="fc-icon" style="--clr:#4f8ef7"><i class="fa-solid fa-video"></i></div>
+        <h3>Live Classes</h3>
+        <p>Join interactive live sessions with your instructor and classmates in real-time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon" style="--clr:#f7854f"><i class="fa-solid fa-file-video"></i></div>
+        <h3>Recorded Lectures</h3>
+        <p>Missed a class? Catch up anytime with full HD recorded sessions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon" style="--clr:#4fcaf7"><i class="fa-solid fa-clipboard-list"></i></div>
+        <h3>Assignments</h3>
+        <p>Submit assignments, get feedback, and track your progress with ease.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon" style="--clr:#b04ff7"><i class="fa-solid fa-comments"></i></div>
+        <h3>Discussion Forum</h3>
+        <p>Ask questions, share ideas, and collaborate with peers anytime.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon" style="--clr:#f74f7a"><i class="fa-solid fa-trophy"></i></div>
+        <h3>Certificates</h3>
+        <p>Earn verified certificates upon course completion to boost your resume.</p>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon" style="--clr:#4ff7a7"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Progress Tracking</h3>
+        <p>Visual dashboards help you monitor learning goals and milestones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COURSES ── -->
+  <section class="courses-section" id="courses">
+    <div class="section-label">Our Courses</div>
+    <h2 class="section-title">Explore Popular Courses</h2>
+    <div class="courses-filter">
+      <button class="filter-btn active" onclick="filterCourses('all', this)">All</button>
+      <button class="filter-btn" onclick="filterCourses('programming', this)">Programming</button>
+      <button class="filter-btn" onclick="filterCourses('design', this)">Design</button>
+      <button class="filter-btn" onclick="filterCourses('data', this)">Data Science</button>
+    </div>
+    <div class="courses-grid" id="coursesGrid"></div>
+  </section>
+
+  <!-- ── CLASSROOM ── -->
+  <section class="classroom-section" id="classroom">
+    <div class="section-label">Virtual Classroom</div>
+    <h2 class="section-title">Join a Session</h2>
+    <div class="classroom-ui">
+      <div class="join-card">
+        <h3><i class="fa-solid fa-door-open"></i> Enter Classroom</h3>
+        <input type="text" id="classCode" placeholder="Enter class code (e.g. EDU-2024)" class="input-field"/>
+        <input type="text" id="studentName" placeholder="Your name" class="input-field"/>
+        <button class="btn btn-primary btn-full" onclick="joinClass()">Join Class</button>
+        <div class="divider"><span>or</span></div>
+        <button class="btn btn-outline btn-full" onclick="createClass()">Create a New Class</button>
+      </div>
+      <div class="session-card" id="sessionCard" style="display:none">
+        <div class="session-header">
+          <i class="fa-solid fa-circle session-dot"></i>
+          <span id="sessionTitle">Session Active</span>
+          <button class="leave-btn" onclick="leaveClass()">Leave</button>
+        </div>
+        <div class="session-video">
+          <i class="fa-solid fa-chalkboard-teacher"></i>
+          <p id="sessionMsg">Welcome! The class will begin shortly.</p>
+        </div>
+        <div class="session-controls">
+          <button class="ctrl-btn" id="micBtn" onclick="toggleControl('mic')"><i class="fa-solid fa-microphone"></i></button>
+          <button class="ctrl-btn" id="camBtn" onclick="toggleControl('cam')"><i class="fa-solid fa-video"></i></button>
+          <button class="ctrl-btn" id="chatBtn" onclick="toggleControl('chat')"><i class="fa-solid fa-comment"></i></button>
+          <button class="ctrl-btn ctrl-danger" onclick="leaveClass()"><i class="fa-solid fa-phone-slash"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <div class="section-label">About</div>
+        <h2 class="section-title" style="text-align:left">Built for Students,<br>By Learners.</h2>
+        <p>EduSpace was created to make quality education accessible to everyone. Whether you're a student, professional, or lifelong learner, our platform gives you the tools to grow.</p>
+        <ul class="about-list">
+          <li><i class="fa-solid fa-check"></i> Free to join, no hidden fees</li>
+          <li><i class="fa-solid fa-check"></i> Mobile-friendly & responsive design</li>
+          <li><i class="fa-solid fa-check"></i> Expert instructors from top institutions</li>
+          <li><i class="fa-solid fa-check"></i> Self-paced & live learning options</li>
+        </ul>
+      </div>
+      <div class="about-image">
+        <div class="about-visual">
+          <div class="av-circle av-c1"></div>
+          <div class="av-circle av-c2"></div>
+          <div class="av-box">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <p>Start learning today</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>EduSpace</span>
+        <p>Empowering learners worldwide.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#classroom">Classroom</a>
+        <a href="#about">About</a>
+      </div>
+      <div class="footer-links">
+        <h4>Support</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-row">
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2024 EduSpace. Built with ❤️ by Swastika</div>
+  </footer>
+
+  <!-- ── MODALS ── -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('loginModal')"><i class="fa-solid fa-xmark"></i></button>
+      <h2>Welcome Back</h2>
+      <p class="modal-sub">Log in to continue learning</p>
+      <input type="email" placeholder="Email address" class="input-field"/>
+      <input type="password" placeholder="Password" class="input-field"/>
+      <button class="btn btn-primary btn-full" onclick="closeModal('loginModal')">Log In</button>
+      <p class="modal-switch">Don't have an account? <a href="#" onclick="switchModal('loginModal','signupModal')">Sign up</a></p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="signupModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('signupModal')"><i class="fa-solid fa-xmark"></i></button>
+      <h2>Create Account</h2>
+      <p class="modal-sub">Join thousands of learners today</p>
+      <input type="text" placeholder="Full name" class="input-field"/>
+      <input type="email" placeholder="Email address" class="input-field"/>
+      <input type="password" placeholder="Create password" class="input-field"/>
+      <button class="btn btn-primary btn-full" onclick="closeModal('signupModal')">Create Account</button>
+      <p class="modal-switch">Already have an account? <a href="#" onclick="switchModal('signupModal','loginModal')">Log in</a></p>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
