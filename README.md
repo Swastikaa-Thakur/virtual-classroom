@@ -1,4 +1,4 @@
-# 🎓 EduSpace – Virtual Classroom
+# 🎓 Virtual Classroom
 
 A fully responsive, web-based virtual classroom platform built with **HTML, CSS, and JavaScript** — no frameworks, no build tools, just open and run!
 
