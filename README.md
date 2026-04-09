@@ -41,8 +41,6 @@ cd virtual-classroom
 | HTML5 | Page structure & semantics |
 | CSS3 | Styling, variables, animations, grid/flexbox |
 | JavaScript (Vanilla) | Interactivity, DOM manipulation, course filtering |
-| Font Awesome 6 | Icons |
-| Google Fonts | Typography (Sora + Inter) |
 
 ---
 
